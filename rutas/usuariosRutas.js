@@ -80,7 +80,7 @@ ruta.post("/login", async(req, res) => {
       if (user.admin=true){
          // console.log("Administrador");
           req.session.admin=req.body.usuario;
-          res.redirect("/nuevoProducto");
+          res.render("info/inicio");
       }
       else{
          // console.log("usuario");

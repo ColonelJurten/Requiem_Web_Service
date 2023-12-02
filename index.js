@@ -21,7 +21,7 @@ app.use(session({
     maxAge:24*60*60*1000
 }));
 app.get("/", (req, res) => {
-    res.render("info/inicio");
+    res.render("infousu/inicio");
   });
 app.use("/", usuariosRutas, productosRutas, rutasUsuariosApi, rutasProductosApi, rutasinfo);
 
