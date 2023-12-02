@@ -1,0 +1,55 @@
+/* Agrega estilos para la cuadrícula de productos */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Estilos para cada fila */
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Estilos para cada elemento de producto */
+.product-item {
+    width: 23%; /* Ajusta el ancho según tus necesidades */
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+/* Estilos para los detalles del producto */
+.product-details {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Estilos para la imagen del producto */
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Estilos para la descripción del producto */
+.product-description {
+    margin-bottom: 10px;
+}
+
+/* Estilos para el precio del producto */
+.product-price {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilos para los enlaces de acciones del producto */
+.product-actions a {
+    display: block;
+    margin-top: 5px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

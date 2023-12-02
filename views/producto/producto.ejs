@@ -1,0 +1,28 @@
+<%- include("../templates/encabezado") %>
+<%- include("../templates/menu") %>
+
+<body style="background-color: #000000;">
+
+  <div class="container mt-5">
+    <form action="/nuevoproducto" method="post" enctype="multipart/form-data" class="text-center">
+      <div class="card" style="max-width: 400px; margin: auto; background-color: #000000; border: 2px solid #F8CF40; color: #F8CF40;">
+        <div class="card-header" style="background-color: #000000; border-bottom: 2px solid #F8CF40;">
+          <h1>Nuevo Producto</h1>
+        </div>
+        <div class="card-body">
+          <input class="form-control mb-3" type="text" name="nombre" id="nombre" placeholder="Nombre" style="border: 1px solid #F8CF40;">
+          <input class="form-control mb-3" type="text" name="descripcion" id="descripcion" placeholder="Descripción" style="border: 1px solid #F8CF40;">
+          <input class="form-control mb-3" type="text" name="precio" id="precio" placeholder="Precio" style="border: 1px solid #F8CF40;">
+          <input class="form-control mb-3" type="file" name="foto" id="foto" placeholder="Selecciona tu foto" style="border: 1px solid #F8CF40;">
+        </div>
+        <div class="card-footer" style="border-top: none;">
+          <button class="btn btn-primary btn-block" type="submit" style="background-color: #1C2143; color: #F8CF40; border: none;">Guardar Producto</button>
+          <button class="btn btn-secondary btn-block" type="reset" style="background-color: #1C2143; color: #F8CF40; border: none;">Limpiar Campos</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</body>
+
+<%- include("../templates/pie") %>
