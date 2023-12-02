@@ -10,6 +10,11 @@ ruta.get("/producto",async(req, res)=>{
     console.log(productos);
     res.render("producto/mostrarProducto",{productos});
 });
+ruta.get("/productoUsu",async(req, res)=>{
+  var productos = await mostrarProducto()
+  console.log(productos);
+  res.render("producto/mostrarProductoUsu",{productos});
+});
 
 ruta.get("/nuevoproducto",(req, res)=>{
     res.render("producto/producto");
