@@ -28,5 +28,16 @@ ruta.get("/acerca", (req, res) => {
   ruta.get("/inicio", (req, res) => {
     res.render("info/inicio");
   });
+  ruta.get("/acercaUsu", (req, res) => {
+    res.render("infousu/acercade");
+  });
+  
+  ruta.get("/comentariosUsu", (req, res) => {
+    res.render("infousu/comentarios");
+  });
+  
+  ruta.get("/inicioUsu", (req, res) => {
+    res.render("infousu/inicio");
+  });
 
 module.exports = ruta;
