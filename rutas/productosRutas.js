@@ -3,7 +3,7 @@ const conexion = require("../bd/conexion");
 var subirArchivos=require("../middlewares/middlewaresProducto").subirArchivos;
 var eliminarArchivoProd=require("../middlewares/middlewaresProducto").eliminarArchivoProd;
 var { mostrarProducto, nuevoProducto, buscarProductoPorID, modificarProducto, borrarProducto } = require("../bd/productoBD");
-const Producto = require("../modelos/producto");
+const Producto = require("../modelos/Producto");
 
 ruta.get("/producto",async(req, res)=>{
     var productos = await mostrarProducto()
