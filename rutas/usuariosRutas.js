@@ -77,7 +77,7 @@ ruta.post("/login", async(req, res) => {
   if (user == undefined) {  
       res.redirect("/login");
   } else {
-      if (user.admin=true){
+      if (user.admin==true){
          // console.log("Administrador");
           req.session.admin=req.body.usuario;
           res.render("info/inicio");
