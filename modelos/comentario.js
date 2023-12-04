@@ -1,9 +1,9 @@
 class Comentario {
     constructor(id, data) {
         this.bandera = 0;
-        this.id = id;
-        this.nombre = data.nombre;
-        this.comentario = data.comentario;
+        this._id = id;
+        this._nombre = data.nombre;
+        this._comentario = data.comentario;
     }
 
     set id(id) {
@@ -33,18 +33,9 @@ class Comentario {
     }
 
     get obtenerComentario() {
-        if (this._id == null) {
-            return {
-                nombre: this.nombre,
-                comentario: this.comentario,
-            };
-        } else {
-            return {
-                id: this.id,
-                nombre: this.nombre,
-                comentario: this.comentario,
-            };
-        }
+        return this._id
+            ? { id: this._id, nombre: this._nombre, comentario: this._comentario }
+            : { nombre: this._nombre, comentario: this._comentario };
     }
 }
 

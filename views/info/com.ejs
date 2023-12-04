@@ -1,0 +1,22 @@
+<%- include("../templates/encabezado") %>
+<%- include("../templates/menu") %>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 style="color: #F8CF40;">Comentarios</h2>
+
+      <% comentarios.forEach((comentario) => { %>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title" style="font-size: 18px;"><%= comentario.nombre %></h5>
+            <p class="card-text" style="font-size: 16px;"><%= comentario.comentario %></p>
+          </div>
+        </div>
+      <% }); %>
+
+    </div>
+  </div>
+</div>
+
+<%- include("../templates/pie") %>

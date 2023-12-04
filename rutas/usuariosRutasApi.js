@@ -15,16 +15,21 @@ ruta.get("/api/mostrarusuarios",async(req, res)=>{
     res.status(200).json(usuarios);
 });
 
-ruta.post("/api/nuevoUsuario",subirArchivos(),async(req, res)=>{
-    req.body.foto=req.file.originalname;
-    var error=await nuevoUsuario(req.body);
-    if(error==0){
-        res.status(200).json("Usuario registrado correctamente");
-    }
-    else{
-        res.status(400).json("Error al registra el usuario");
+ruta.post("/api/nuevoUsuario", subirArchivos(), async (req, res) => {
+    try {
+        req.body.foto = req.file.originalname;
+        var error = await nuevoUsuario(req.body);
+        if (error === 0) {
+            res.status(200).json("Usuario registrado correctamente");
+        } else {
+            res.status(400).json("Error al registrar el usuario");
+        }
+    } catch (error) {
+        console.error("Error en la API:", error);
+        res.status(500).json("Error interno en el servidor");
     }
 });
+
 
 ruta.get("/api/buscarUsuarioPorId/:id",async(req, res)=>{
     var user=  await buscarporID(req.params.id);
@@ -51,7 +56,7 @@ ruta.get("/api/borrarUsuario/:id", async(req,res)=>{
     try {
         var usuario = await buscarporID(req.params.id);
         if (!usuario) {
-          res.status(200).send("usuario encontrado.");
+          res.status(100).send("usuario encontrado.");
         } else {
           var archivo = usuario.foto;
           await borrarUsuario(req.params.id);

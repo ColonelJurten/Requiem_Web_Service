@@ -8,7 +8,7 @@ admin.initializeApp({
 var db = admin.firestore();
 var conexionUsuarios = db.collection("miejemploBD");
 var conexionProductos = db.collection("productos");
-var conexionComentarios = db.collection("comentarios");
+var conexionComentarios = db.collection("comentariosss");
 
 module.exports = {
     conexionUsuarios,

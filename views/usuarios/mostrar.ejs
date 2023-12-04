@@ -10,6 +10,7 @@
             <h5 class="card-title"><%= usuario.nombre %></h5>
             <p class="card-text"><%= usuario.usuario %></p>
           </div>
+          <img src="/images/<%= usuario.foto %>" class="card-img-top img-fluid rounded-start" alt="Imagen del producto">
           <div class="card-footer">
             <div class="d-grid">
               <a href="/editarUsuario/<%= usuario.id %>" class="btn btn-primary">Editar</a>

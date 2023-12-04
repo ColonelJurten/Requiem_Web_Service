@@ -8,7 +8,10 @@ async function mostrarComentarios() {
         comentarios.forEach((comentario) => {
             var comentarioObjeto = new Comentario(comentario.id, comentario.data());
             if (comentarioObjeto.bandera == 0) {
-                comentariosArray.push(comentarioObjeto.obtenerComentario);
+                comentariosArray.push({
+                    nombre: comentarioObjeto.nombre,
+                    comentario: comentarioObjeto.comentario
+                });
             }
         });
     } catch (err) {
@@ -38,7 +41,11 @@ async function nuevoComentario(datos) {
     var error = 1;
     if (comentario.bandera == 0) {
         try {
-            await conexionComentarios.doc().set(comentario.obtenerComentario);
+            // Solo guardamos nombre y comentario en la base de datos
+            await conexionComentarios.doc().set({
+                nombre: comentario.nombre,
+                comentario: comentario.comentario
+            });
             console.log("Comentario registrado correctamente");
             error = 0;
         } catch (err) {
@@ -55,7 +62,11 @@ async function modificarComentario(datos) {
         comentario = new Comentario(datos.id, datos);
         if (comentario.bandera == 0) {
             try {
-                await conexionComentarios.doc(comentario.id).set(comentario.obtenerComentario);
+                // Actualizamos nombre y comentario en la base de datos
+                await conexionComentarios.doc(comentario.id).set({
+                    nombre: comentario.nombre,
+                    comentario: comentario.comentario
+                });
                 console.log("Comentario actualizado correctamente");
                 error = 0;
             } catch (err) {
