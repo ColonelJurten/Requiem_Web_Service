@@ -96,6 +96,11 @@ ruta.post("/login", async (req, res) => {
   } else {
       if (user.admin =true) {
           req.session.admin = req.body.usuario;
+      }
+      if (user.admin==true){
+         // console.log("Administrador");
+          req.session.admin=req.body.usuario;
+
           res.render("info/inicio");
       } else {
           req.session.usuario = req.body.usuario;
